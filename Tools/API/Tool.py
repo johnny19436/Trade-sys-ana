@@ -4,7 +4,7 @@ from tda.orders.equities import equity_buy_limit,equity_sell_limit,equity_buy_ma
 import requests
 
 #-----------config------------
-api_key=''
+api_key='QOADHYNDDJVOI3JY4WCOBCNYSGOHAWZN@AMER.OAUTHAP'
 token_path=r""
 redirect_uri=''
 chromedriver_path=r""
