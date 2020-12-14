@@ -2,22 +2,23 @@
 
 ## Tools
 * :white_check_mark: 取得交易資格(Tools.API.Tool.GEY_AUTH)
-* :white_check_mark: 購買 (Tools.API.Tool.BUY)
-* :white_check_mark: 售出 (Tools.API.Tool.SELL)
-* :white_check_mark: 取得單體即時資訊 (Tools.API.Tool.GET_QUOTE)
+* :white_check_mark: 購買 (Tools.Tool.BUY)
+* :white_check_mark: 售出 (Tools.Tool.SELL)
+* :white_check_mark: 取得單體即時資訊 (Tools.Tool.GET_QUOTE)
 * :white_circle: 取得多體即時資訊
-* :white_circle: 訂定時間統一表示方法
+* :heavy_check_mark: 清理資料(Tools.Tool.CLEAN_DATA)
+* :heavy_check_mark: 時刻統一用index編號
 ## DataBase
 * Raw data stored in "Data/Raw"
 * Indicators stored in "Data/Indicators"
+* :heavy_check_mark: RSI
 
 ## Algo
 
-* 用收盤價計算指標
 
 
 ## Todo
-* 視覺化(oop):X-第幾個 y-close(我把已清理好的資料放在c_.... ,直接拿來用)
+* 視覺化(oop):X-index y-close(清理好的資料放在"Data/Raw/c_...",寫完貼在Tools,輸入使用csv,輸出用matplot)
 * auto storing data
 
 * 算Indicators

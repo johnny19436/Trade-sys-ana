@@ -3,6 +3,7 @@ from tda import auth,client
 from tda.orders.equities import equity_buy_limit,equity_sell_limit,equity_buy_market,equity_sell_market
 import requests
 import pandas as pd
+import csv
 
 #-----------config------------
 api_key='QOADHYNDDJVOI3JY4WCOBCNYSGOHAWZN@AMER.OAUTHAP'
@@ -60,5 +61,26 @@ def CLEAN_DATA(from_dir,to_dir):
     df.to_csv(to_dir)
 
 #-------------Indicators----------------
-def RSI(from_dir,to_dir,n):
-    pass
+def RSI(from_dir,to_dir,N):
+    df=pd.read_csv(from_dir)
+
+    a=[]
+    a.append(0)
+    for i in range(1,df.shape[0]):
+        k=df.loc[i]['Close']-df.loc[i-1]['Close']
+        a.append(k)
+
+    with open(to_dir,'w',newline='') as f:
+        thewriter=csv.writer(f)
+        thewriter.writerow(['','RSI'])
+        for i in range(N,df.shape[0]):
+            up = 0
+            dn = 0
+            for k in range(i-N+1,i+1):
+                p = a[k]
+                if p > 0:
+                    up+=p
+                else:
+                    dn+=p
+            RSI=round(up/(up-dn)*100, 2)
+            thewriter.writerow([i,RSI])
