@@ -17,7 +17,7 @@
 
 
 ## Todo
-* 視覺化(oop):X-第幾個 y-close
+* 視覺化(oop):X-第幾個 y-close(我把已清理好的資料放在c_.... ,直接拿來用)
 * auto storing data
 
 * 算Indicators
