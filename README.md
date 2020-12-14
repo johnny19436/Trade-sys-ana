@@ -15,9 +15,10 @@
 
 * 用收盤價計算指標
 
+
 ## Todo
-* 視覺化(oop)
-* time translator
+* 視覺化(oop):X-第幾個 y-close
+
 * auto storing data
 * 算Indicators
 
