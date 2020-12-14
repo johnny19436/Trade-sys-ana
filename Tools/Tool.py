@@ -12,6 +12,18 @@ chromedriver_path=r""
 account_id=''
 #-----------config------------
 
+#Auth
+def GET_AUTH():
+    try:
+        client=auth.client_from_token_file(token_path, api_key)
+        return client
+    except FileNotFoundError:
+        from selenium import webdriver
+        with webdriver.Chrome(executable_path=chromedriver_path) as driver:
+            client = auth.client_from_login_flow(
+                driver, api_key, redirect_uri, token_path)
+            return client
+
 #Buy
 def BUY_LIMIT(symbol,quantity,price):
     Client=GET_AUTH()
@@ -39,23 +51,14 @@ def GET_QUOTE(symbol):
     return data[symbol]
 
 #Cleaning data
-def CLEAND_DATA(directory):
-    df=pd.read_csv(directory)
-
+def CLEAN_DATA(from_dir,to_dir):
+    df=pd.read_csv(from_dir)
     df=df.dropna()
     df.drop(['Open','High','Low','Close'],axis=1,inplace=True)
-    return df
+    df.reset_index(drop=True, inplace=True)
+    df.rename(columns={'Adj Close': 'Close'}, inplace=True)
+    df.to_csv(to_dir)
 
-
-#Auth
-def GET_AUTH():
-    try:
-        client=auth.client_from_token_file(token_path, api_key)
-        return client
-    except FileNotFoundError:
-        from selenium import webdriver
-        with webdriver.Chrome(executable_path=chromedriver_path) as driver:
-            client = auth.client_from_login_flow(
-                driver, api_key, redirect_uri, token_path)
-            return client
-
+#-------------Indicators----------------
+def RSI(from_dir,to_dir,n):
+    pass
