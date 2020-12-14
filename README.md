@@ -4,16 +4,18 @@
 * :white_check_mark: 取得交易資格(Tools.API.Tool.GEY_AUTH)
 * :white_check_mark: 購買 (Tools.API.Tool.BUY)
 * :white_check_mark: 售出 (Tools.API.Tool.SELL)
-* :heavy_check_mark: 取得單體即時資訊 (Tools.API.Tool.GET_QUOTE)
+* :white_check_mark: 取得單體即時資訊 (Tools.API.Tool.GET_QUOTE)
 * :white_circle: 取得多體即時資訊
 * :white_circle: 訂定時間統一表示方法
 ## DataBase
-* sotred in "Data" file like example(using .csv)
+* Raw data stored in "Data/Raw"
+* Indicators stored in "Data/Indicators"
+
 
 
 ## Algo
 
-
+* 用收盤價計算指標
 
 
 
