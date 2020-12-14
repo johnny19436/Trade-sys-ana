@@ -18,8 +18,8 @@
 
 ## Todo
 * 視覺化(oop):X-第幾個 y-close
-
 * auto storing data
+
 * 算Indicators
 
 
