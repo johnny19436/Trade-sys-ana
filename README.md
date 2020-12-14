@@ -11,14 +11,15 @@
 * Raw data stored in "Data/Raw"
 * Indicators stored in "Data/Indicators"
 
-
-
 ## Algo
 
 * 用收盤價計算指標
 
-
-
+## Todo
+* 視覺化(oop)
+* time translator
+* auto storing data
+* 算Indicators
 
 
 
