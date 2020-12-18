@@ -56,7 +56,6 @@ def CLEAN_DATA(from_dir,to_dir):
     df=pd.read_csv(from_dir)
     df=df.dropna()
     df.drop(['Open','High','Low','Close'],axis=1,inplace=True)
-    df.reset_index(drop=True, inplace=True)
     df.rename(columns={'Adj Close': 'Close'}, inplace=True)
     df.to_csv(to_dir)
 
@@ -72,7 +71,7 @@ def RSI(from_dir,to_dir,N):
 
     with open(to_dir,'w',newline='') as f:
         thewriter=csv.writer(f)
-        thewriter.writerow(['','RSI'])
+        thewriter.writerow(['idx','RSI'])
         for i in range(N,df.shape[0]):
             up = 0
             dn = 0
@@ -84,4 +83,6 @@ def RSI(from_dir,to_dir,N):
                     dn+=p
             RSI=round(up/(up-dn)*100, 2)
             thewriter.writerow([i,RSI])
-
+    df=pd.read_csv(to_dir)
+    df.set_index("idx" , inplace=True)
+    df.to_csv(to_dir)
