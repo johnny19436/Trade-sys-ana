@@ -84,3 +84,4 @@ def RSI(from_dir,to_dir,N):
                     dn+=p
             RSI=round(up/(up-dn)*100, 2)
             thewriter.writerow([i,RSI])
+
