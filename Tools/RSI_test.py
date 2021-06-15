@@ -32,4 +32,4 @@ for i in range(9,df.shape[0]):
 if p==1:
     total+=df.iloc[df.shape[0]-1]['Close']
 
-print(round((total*start)/(first*end),2))
+print(round((total*start)/(first*end),2)-1)
